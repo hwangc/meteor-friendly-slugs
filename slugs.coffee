@@ -237,6 +237,7 @@ slugify = (text, transliteration, maxLength) ->
     text = text.replace(new RegExp('['+item.from+']','g'),item.to)
   slug = text
     .replace(/'/g, '')              # Remove all apostrophes
+    .replace(/ /g,'-')              # Replace any spaces with a hyphen -
 #    .replace(/[^0-9a-z-]/g, '-')    # Replace anything that is not 0-9, a-z, or - with -
     .replace(/\-\-+/g, '-')         # Replace multiple - with single -
     .replace(/^-+/, '')             # Trim - from start of text
